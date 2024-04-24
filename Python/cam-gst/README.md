@@ -17,8 +17,11 @@ fps = "30"
 camera_format = "NV12"
 ```
 
-| Device | Height/Width | Format | Device |
+### Device Nodes
+| Device | Height x Width | Format | Device |
 | --- | --- | --- | --- |
-| VIM3 | 1920x1080 | RGB <br/> (`cv2.VideoWriter_fourcc(*'XVID')`) | `/dev/video0` |
-| VIM4 | 3840x2160 | NV12 <br/> (`cv.VideoWriter_fourcc('U', 'Y', 'V', 'Y')`) | `/dev/video50` | 
-| Edge2 | 3840x2160 | NV12 <br/> (`cv.VideoWriter_fourcc('U', 'Y', 'V', 'Y')`) | `/dev/video24` (CAM2) <br> `/dev/video33` (CAM1) <br> `/dev/video42` (CAM3) | 
+| VIM3 - kernel 4.9 | 1920 x 1080 | RGB | `/dev/video0` |
+| VIM3 - kernel 5.15 | 1920 x 1080 | NV12 | `/dev/video50` |
+| VIM4 | 3840 x 2160 | NV12  | `/dev/video50` | 
+| Edge2 - kernel 5.10.66 | 3840 x 2160 | NV12 | `/dev/video33` (CAM1) <br> `/dev/video24` (CAM2) <br> `/dev/video42` (CAM3) | 
+| Edge2 - kernel 5.10.160 and above | 3840 x 2160 | NV12 | `/dev/video42` (CAM1) <br> `/dev/video33` (CAM2) <br> `/dev/video51` (CAM3) | 

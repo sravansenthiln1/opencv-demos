@@ -7,7 +7,7 @@ import numpy as np
 import sys
 
 # Get the video device node
-camera_arg = sys.argv[1][10:]
+camera_arg = sys.argv[1]
 
 # Capture Parameters
 width = "3840"
@@ -16,7 +16,7 @@ fps = "30"
 camera_format = "NV12"
 
 # Construct the GStreamer pipeline for the video source
-gst = f'v4l2src device={camera_arg} ! video/x-raw,format={camera_format},width={width},height={height},framerate={fps}/1 ! ! videoconvert ! appsink'
+gst = f'v4l2src device={camera_arg} ! video/x-raw,format={camera_format},width={width},height={height},framerate={fps}/1 ! videoconvert ! appsink'
 
 # Select v4l2 for video capture
 capture = cv.VideoCapture(gst, cv.CAP_GSTREAMER)
